@@ -1,0 +1,16 @@
+forge 'https://forgeapi.puppetlabs.com'
+
+mod 'stahnma/epel'
+mod 'puppetlabs/stdlib'
+mod 'puppet/archive'
+
+mod 'ebrc/ebrc_yum_repo',
+  :git => 'git@github.com:EuPathDB/puppet-ebrc_yum_repo.git'
+
+mod 'local/profiles',
+  :path => './src/profiles'
+  :latest
+
+mod 'local/ebrc_java',
+  :path => './src/ebrc_java'
+  :latest
