@@ -13,3 +13,5 @@ stardog::java_args: '-Xms128m -Xmx512m -XX:MaxDirectMemorySize=1g'
 stardog::properties:
   query.all.graphs: true
   query.timeout: 500ms
+stardog::sdpass:
+  - '*:*:*:admin:passWORD'
