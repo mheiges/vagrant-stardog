@@ -6,8 +6,12 @@ class profiles::stardog {
   
   Class['ebrc_yum_repo'] ->
   Class['ebrc_java'] ->
+  Package['unzip'] ->
   Class['stardog']
 
+  package { 'unzip':
+    ensure => installed,
+  }
 
   firewalld_rich_rule { 'stardog server':
     ensure    => present,
