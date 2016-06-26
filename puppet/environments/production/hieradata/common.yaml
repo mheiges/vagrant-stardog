@@ -5,8 +5,8 @@ ebrc_java::packages:
 ebrc_java::java_home: /usr/java/jdk1.8.0_92
 ebrc_java::default_ver: /usr/java/jdk1.8.0_92
 
-stardog::package_url: set in sensitive.yaml
-stardog::license_url: set in sensitive.yaml
+stardog::package_source: set in sensitive.yaml
+stardog::license_source: set in sensitive.yaml
 stardog::version: 4.1
 stardog::java_args: '-Xms128m -Xmx512m -XX:MaxDirectMemorySize=1g'
 stardog::properties:
