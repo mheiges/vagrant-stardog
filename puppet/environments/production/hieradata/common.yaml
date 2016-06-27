@@ -18,15 +18,15 @@ stardog::properties:
   javax.net.ssl.keyStorePassword: 'password'
   javax.net.ssl.keyStore: '/var/lib/stardog/keystore.jks'
 stardog::ssl: require
-stardog::ssl_keystore::certificate:
+stardog::ssl::certificate:
   src: 'puppet:///modules/profiles/ssl/demo-rsa.crt'
   dest: '/etc/pki/tls/certs/demo-rsa.crt'
-stardog::ssl_keystore::private_key:
+stardog::ssl::private_key:
   src: 'puppet:///modules/profiles/ssl/demo-rsa.key'
   dest: '/etc/pki/tls/private/demo-rsa.key'
-stardog::ssl_keystore::ca:
+stardog::ssl::ca:
   src:
   dest: '/etc/pki/tls/certs/apidb-ca-rsa.crt'
-stardog::ssl_keystore::passwd: 'password'
+stardog::ssl::ks_passwd: 'password'
 stardog::sdpass:
   - '*:*:*:admin:passWORD'
