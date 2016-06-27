@@ -1,5 +1,7 @@
 ---
 
+ebrc_ca::cacert: apidb-ca-rsa.crt
+
 ebrc_java::packages:
   - jdk1.8.0_92
 ebrc_java::java_home: /usr/java/jdk1.8.0_92
@@ -7,11 +9,24 @@ ebrc_java::default_ver: /usr/java/jdk1.8.0_92
 
 stardog::package_source: set in sensitive.yaml
 stardog::license_source: set in sensitive.yaml
-stardog::version: 4.1
+stardog::version: '4.1'
 stardog::java_home: /usr/java/latest
 stardog::java_args: '-Xms128m -Xmx512m -XX:MaxDirectMemorySize=1g'
 stardog::properties:
-  query.all.graphs: true
-  query.timeout: 500ms
+  query.all.graphs: 'true'
+  query.timeout: '500ms'
+  javax.net.ssl.keyStorePassword: 'password'
+  javax.net.ssl.keyStore: '/var/lib/stardog/keystore.jks'
+stardog::ssl: require
+stardog::ssl_keystore::certificate:
+  src: 'puppet:///modules/profiles/ssl/demo-rsa.crt'
+  dest: '/etc/pki/tls/certs/demo-rsa.crt'
+stardog::ssl_keystore::private_key:
+  src: 'puppet:///modules/profiles/ssl/demo-rsa.key'
+  dest: '/etc/pki/tls/private/demo-rsa.key'
+stardog::ssl_keystore::ca:
+  src:
+  dest: '/etc/pki/tls/certs/apidb-ca-rsa.crt'
+stardog::ssl_keystore::passwd: 'password'
 stardog::sdpass:
   - '*:*:*:admin:passWORD'

@@ -1,11 +1,14 @@
+# Install Stardog (http://stardog.com)
 class profiles::stardog {
 
-  include ebrc_yum_repo
-  include ebrc_java
-  include stardog
+  include ::profiles::ebrc_ca_bundle
+  include ::ebrc_yum_repo
+  include ::ebrc_java
+  include ::stardog
   
   Class['ebrc_yum_repo'] ->
   Class['ebrc_java'] ->
+  Class['profiles::ebrc_ca_bundle'] ->
   Package['unzip'] ->
   Class['stardog']
 

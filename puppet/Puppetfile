@@ -3,6 +3,7 @@ forge 'https://forgeapi.puppetlabs.com'
 mod 'stahnma/epel'
 mod 'puppetlabs/stdlib'
 mod 'puppet/archive'
+mod 'jlambert121/trusted_ca'
 
 mod 'ebrc/ebrc_yum_repo',
   :git => 'git@github.com:EuPathDB/puppet-ebrc_yum_repo.git'
