@@ -1,0 +1,8 @@
+---
+
+stardog::package_source:
+  url: 'http://software.apidb.org/source/stardog/stardog-4.1.zip'
+  sha1: '95bb39ee9bf53cb082a173667984246b3ba11432'
+stardog::license_source:
+  url: 'http://software.apidb.org/source/stardog/stardog-license-key.bin'
+  sha1: 'c985934e8a9086fdd7d0c6b9cd04c828becb9db8'
